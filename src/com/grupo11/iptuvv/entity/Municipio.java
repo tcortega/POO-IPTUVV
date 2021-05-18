@@ -30,6 +30,10 @@ public class Municipio
         imoveis.remove(matricula);
     }
 
+    public int getQuantidadeImoveis() {
+        return this.imoveis.size();
+    }
+
     private String gerarMatricula(Imovel imovel)
     {
         String primeiroNome = imovel.getPrimeiroNome().toLowerCase();
@@ -45,10 +49,11 @@ public class Municipio
 
             float valorProcessado = calcularMulta(imovel);
 
-            if (!simular)
-                imovel.setImposto(valorProcessado);
-
             valorTotal += valorProcessado;
+
+            if (!simular) {
+                imovel.setImposto(valorProcessado);
+            }
         }
 
         return valorTotal;

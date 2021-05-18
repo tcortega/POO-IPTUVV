@@ -2,6 +2,7 @@ package com.grupo11.iptuvv.handler;
 
 import com.grupo11.iptuvv.entity.Imovel;
 import com.grupo11.iptuvv.forms.FormsImovel;
+import com.grupo11.iptuvv.forms.FormsMunicipio;
 
 import static com.grupo11.iptuvv.Main.municipio;
 
@@ -35,6 +36,13 @@ public class Handlers
                 if (escolhaRemocao)
                     municipio.removeImovel(matricula);
 
+                break;
+            }
+            case 3:
+            {
+                float valorTotal = municipio.processarTodosImoveis(true);
+                int quantidadeImoveis = municipio.getQuantidadeImoveis();
+                FormsMunicipio.simulacaoImpostoTotal(valorTotal, quantidadeImoveis);
                 break;
             }
         }
