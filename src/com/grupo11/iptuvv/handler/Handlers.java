@@ -40,8 +40,12 @@ public class Handlers
             }
             case 3:
             {
-                float valorTotal = municipio.processarTodosImoveis(true);
                 int quantidadeImoveis = municipio.getQuantidadeImoveis();
+                if (quantidadeImoveis == 0) {
+                    FormsMunicipio.semImoveisCadastrados();
+                    break;
+                }
+                float valorTotal = municipio.processarTodosImoveis(true);
                 FormsMunicipio.simulacaoImpostoTotal(valorTotal, quantidadeImoveis);
                 break;
             }
