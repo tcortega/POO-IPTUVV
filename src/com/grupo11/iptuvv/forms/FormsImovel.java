@@ -15,8 +15,7 @@ public class FormsImovel
         float impostoImovel = InOut.leInt("Insira o valor do imposto a ser pago", CADASTRO_DE_IMOVEIS);
         int mesesAtraso = InOut.leInt("Insira os meses em atraso para o pagamento", CADASTRO_DE_IMOVEIS);
 
-        Imovel imovel = new Imovel(nomeProprietario, impostoImovel, mesesAtraso);
-        return imovel;
+        return new Imovel(nomeProprietario, impostoImovel, mesesAtraso);
     }
 
     public static void sucessoCadastroImovel(String matricula)
@@ -26,8 +25,7 @@ public class FormsImovel
 
     public static String buscaImovel()
     {
-        String matricula = InOut.leString("Insira a matrícula do imóvel que deseja buscar", BUSCA_DE_IMOVEIS);
-        return matricula;
+        return InOut.leString("Insira a matrícula do imóvel que deseja buscar", BUSCA_DE_IMOVEIS);
     }
 
     public static void imovelNaoEncontrado(String matricula)
@@ -38,7 +36,6 @@ public class FormsImovel
     public static boolean removerImovel(Imovel imovel)
     {
         String frase = "Deseja realmente remover o imóvel do município?" + System.lineSeparator() + System.lineSeparator() + imovel.toString();
-        boolean escolha = InOut.leBoolean(frase, REMOVER_IMOVEL);
-        return escolha;
+        return InOut.leBoolean(frase, REMOVER_IMOVEL);
     }
 }

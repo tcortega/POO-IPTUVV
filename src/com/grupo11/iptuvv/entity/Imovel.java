@@ -59,7 +59,7 @@ public class Imovel
 
     public boolean getStatusProcessado() {
         return this.processado;
-    };
+    }
 
     public void setStatusProcessado(boolean statusProcessado) {
         this.processado = statusProcessado;
@@ -72,11 +72,10 @@ public class Imovel
 
     @Override
     public String toString() {
-        String imovelTexto = "Proprietário: " + this.getNome() + System.lineSeparator() +
+
+        return "Proprietário: " + this.getNome() + System.lineSeparator() +
                              "Imposto devido: " + this.getImposto() + System.lineSeparator() +
                              "Meses em atraso: " + this.getMesesAtraso() + System.lineSeparator() +
                              "Matrícula: " + this.getMatricula();
-
-        return imovelTexto;
     }
 }

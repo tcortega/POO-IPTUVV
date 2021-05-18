@@ -22,15 +22,13 @@ public class Main
 
     private static String textoMenu()
     {
-        StringBuilder textoMenu = new StringBuilder();
-        textoMenu.append("1 - Cadastrar imóvel" + System.lineSeparator());
-        textoMenu.append("2 - Remover imóvel" + System.lineSeparator());
-        textoMenu.append("3 - Simular imposto total devido" + System.lineSeparator());
-        textoMenu.append("4 - Processar multa sob todos imóveis" + System.lineSeparator());
-        textoMenu.append("5 - Processar imóvel específico" + System.lineSeparator());
-        textoMenu.append(System.lineSeparator());
-        textoMenu.append("0 - Sair do programa");
 
-        return textoMenu.toString();
+        return "1 - Cadastrar imóvel" + System.lineSeparator() +
+                "2 - Remover imóvel" + System.lineSeparator() +
+                "3 - Simular imposto total devido" + System.lineSeparator() +
+                "4 - Processar multa sob todos imóveis" + System.lineSeparator() +
+                "5 - Processar imóvel específico" + System.lineSeparator() +
+                System.lineSeparator() +
+                "0 - Sair do programa";
     }
 }

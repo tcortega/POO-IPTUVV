@@ -294,10 +294,7 @@ public class InOut
 			if (Entrada == null)
 				System.exit(0);
 
-            if (Entrada.length() != 0)
-                ERRO = false;
-            else
-                ERRO = true;
+            ERRO = Entrada.length() == 0;
         } while (ERRO);
         return Entrada.charAt(0);
     }
