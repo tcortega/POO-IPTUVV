@@ -6,8 +6,6 @@ import com.grupo11.iptuvv.util.InOut;
 public class FormsImovel
 {
     private static final String CADASTRO_DE_IMOVEIS = "CADASTRO DE IMÓVEIS";
-    private static final String BUSCA_DE_IMOVEIS = "BUSCA DE IMÓVEIS";
-    private static final String REMOVER_IMOVEL = "REMOVER IMÓVEL";
 
     public static Imovel cadastroImovel()
     {
@@ -21,21 +19,5 @@ public class FormsImovel
     public static void sucessoCadastroImovel(String matricula)
     {
         InOut.MsgDeInformacao(CADASTRO_DE_IMOVEIS, "Cadastro de imóvel realizado com sucesso! Matrícula: " + matricula);
-    }
-
-    public static String buscaImovel()
-    {
-        return InOut.leString("Insira a matrícula do imóvel que deseja buscar", BUSCA_DE_IMOVEIS);
-    }
-
-    public static void imovelNaoEncontrado(String matricula)
-    {
-        InOut.MsgDeErro(BUSCA_DE_IMOVEIS, "Não existe nenhum imóvel com a matrícula " + matricula + System.lineSeparator() + "Você digitou errado?");
-    }
-
-    public static boolean removerImovel(Imovel imovel)
-    {
-        String frase = "Deseja realmente remover o imóvel do município?" + System.lineSeparator() + System.lineSeparator() + imovel.toString();
-        return InOut.leBoolean(frase, REMOVER_IMOVEL);
     }
 }

@@ -1,0 +1,105 @@
+package com.grupo11.iptuvv.menu;
+
+import com.grupo11.iptuvv.entity.Imovel;
+import com.grupo11.iptuvv.entity.Municipio;
+import com.grupo11.iptuvv.forms.FormsImovel;
+import com.grupo11.iptuvv.forms.FormsMenu;
+import com.grupo11.iptuvv.forms.FormsMunicipio;
+import com.grupo11.iptuvv.handler.Handlers;
+import com.grupo11.iptuvv.util.InOut;
+
+public class Menu
+{
+    public static final Municipio municipio = new Municipio();
+
+    public static void exibir()
+    {
+        while (true)
+        {
+            int escolha = FormsMenu.menuPrincipal();
+            if (escolha == 0)
+                break;
+
+            Handlers.escolha(escolha);
+        }
+    }
+
+    public static void cadastrarImoveis()
+    {
+        Imovel imovel = FormsImovel.cadastroImovel();
+        municipio.addImovel(imovel);
+        FormsImovel.sucessoCadastroImovel(imovel.getMatricula());
+    }
+
+    public static void removerImoveis()
+    {
+        String matricula = FormsMunicipio.buscaImovel();
+        Imovel imovelEscolha = municipio.getImovel(matricula);
+        if (imovelEscolha == null)
+        {
+            FormsMunicipio.imovelNaoEncontrado(matricula);
+        } else
+        {
+            boolean escolhaRemocao = FormsMunicipio.confirmacaoRemoverImovel(imovelEscolha);
+
+            if (escolhaRemocao)
+            {
+                municipio.removeImovel(matricula);
+                FormsMunicipio.sucessoRemocaoImovel();
+            }
+        }
+    }
+
+    public static void simularImpostoDevido()
+    {
+        int quantidadeImoveis = municipio.getQuantidadeImoveis();
+        if (quantidadeImoveis == 0)
+        {
+            FormsMunicipio.semImoveisCadastradosSimulacao();
+        } else
+        {
+            float valorTotal = municipio.simularValorTotalDevido();
+            FormsMunicipio.simulacaoImpostoTotal(valorTotal, quantidadeImoveis);
+        }
+    }
+
+    public static void processarImpostoDevido()
+    {
+        int quantidadeImoveis = municipio.getQuantidadeImoveis();
+        if (quantidadeImoveis == 0)
+        {
+            FormsMunicipio.semImoveisCadastradosProcessamento();
+        } else
+        {
+            float valorTotal = municipio.processarTodosImoveis();
+            FormsMunicipio.processarImpostoTotal(valorTotal, quantidadeImoveis);
+        }
+    }
+
+    public static void processarImovelEspecifico()
+    {
+        String matricula = FormsMunicipio.buscaImovel();
+        Imovel imovelEscolha = municipio.getImovel(matricula);
+
+        if (imovelEscolha == null)
+        {
+            FormsMunicipio.imovelNaoEncontrado(matricula);
+        } else
+        {
+            if (imovelEscolha.getStatusProcessado())
+            {
+                boolean escolhaProcessamento = FormsMunicipio.confirmacaoReprocessarImovel(imovelEscolha);
+                if (!escolhaProcessamento)
+                    return;
+            }
+
+            imovelEscolha = municipio.processarImovel(imovelEscolha);
+            FormsMunicipio.sucessoProcessamentoImovel(imovelEscolha);
+        }
+    }
+
+    public static void escolhaNaoExiste()
+    {
+        FormsMenu.escolhaNaoExiste();
+    }
+}

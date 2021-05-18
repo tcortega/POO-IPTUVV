@@ -40,6 +40,14 @@ public class Municipio
         return primeiroNome + "vv" + this.imoveis.size();
     }
 
+    public Imovel processarImovel(Imovel imovel) {
+        float valorProcessado = calcularMulta(imovel);
+        imovel.setImposto(valorProcessado);
+        imovel.setStatusProcessado(true);
+
+        return imovel;
+    }
+
     public float processarTodosImoveis()
     {
         float valorTotal = 0.0f;
