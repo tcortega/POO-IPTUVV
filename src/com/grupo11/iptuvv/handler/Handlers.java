@@ -46,7 +46,7 @@ public class Handlers
                     FormsMunicipio.semImoveisCadastradosSimulacao();
                     break;
                 }
-                float valorTotal = municipio.processarTodosImoveis(true);
+                float valorTotal = municipio.simularValorTotalDevido();
                 FormsMunicipio.simulacaoImpostoTotal(valorTotal, quantidadeImoveis);
                 break;
             }
@@ -58,7 +58,7 @@ public class Handlers
                     FormsMunicipio.semImoveisCadastradosProcessamento();
                     break;
                 }
-                float valorTotal = municipio.processarTodosImoveis(false);
+                float valorTotal = municipio.processarTodosImoveis();
                 FormsMunicipio.processarImpostoTotal(valorTotal, quantidadeImoveis);
                 break;
             }

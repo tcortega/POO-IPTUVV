@@ -40,7 +40,7 @@ public class Municipio
         return primeiroNome + "vv" + this.imoveis.size();
     }
 
-    public float processarTodosImoveis(boolean simular)
+    public float processarTodosImoveis()
     {
         float valorTotal = 0.0f;
         for (Map.Entry<String, Imovel> entry : imoveis.entrySet())
@@ -51,9 +51,22 @@ public class Municipio
 
             valorTotal += valorProcessado;
 
-            if (!simular) {
-                imovel.setImposto(valorProcessado);
-            }
+            imovel.setImposto(valorProcessado);
+            imovel.setStatusProcessado(true);
+        }
+
+        return valorTotal;
+    }
+
+    public float simularValorTotalDevido() {
+        float valorTotal = 0.0f;
+        for (Map.Entry<String, Imovel> entry : imoveis.entrySet())
+        {
+            Imovel imovel = entry.getValue();
+
+            float valorProcessado = calcularMulta(imovel);
+
+            valorTotal += valorProcessado;
         }
 
         return valorTotal;
