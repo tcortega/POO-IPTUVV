@@ -4,9 +4,9 @@ import com.grupo11.iptuvv.util.InOut;
 
 public class FormsMunicipio
 {
-    public static final String SIMULACAO_DE_IMPOSTO_DEVIDO = "SIMULAÇÃO DE IMPOSTO DEVIDO";
-    public static final String PROCESSAR_IMPOSTO_DEVIDO = "PROCESSAMENTO DE IMPOSTO DEVIDO";
-    public static final String MSG_SEM_CADASTRO_DE_IMOVEIS = "Não há imóveis cadastrados no município.";
+    private static final String SIMULACAO_DE_IMPOSTO_DEVIDO = "SIMULAÇÃO DE IMPOSTO DEVIDO";
+    private static final String PROCESSAR_IMPOSTO_DEVIDO = "PROCESSAMENTO DE IMPOSTO DEVIDO";
+    private static final String MSG_SEM_CADASTRO_DE_IMOVEIS = "Não há imóveis cadastrados no município.";
 
     public static void simulacaoImpostoTotal(float valorTotal, int quantidadeImoveis)
     {

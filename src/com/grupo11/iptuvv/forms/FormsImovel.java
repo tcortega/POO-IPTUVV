@@ -5,9 +5,9 @@ import com.grupo11.iptuvv.util.InOut;
 
 public class FormsImovel
 {
-    public static final String CADASTRO_DE_IMOVEIS = "CADASTRO DE IMÓVEIS";
-    public static final String BUSCA_DE_IMOVEIS = "BUSCA DE IMÓVEIS";
-    public static final String REMOVER_IMOVEL = "REMOVER IMÓVEL";
+    private static final String CADASTRO_DE_IMOVEIS = "CADASTRO DE IMÓVEIS";
+    private static final String BUSCA_DE_IMOVEIS = "BUSCA DE IMÓVEIS";
+    private static final String REMOVER_IMOVEL = "REMOVER IMÓVEL";
 
     public static Imovel cadastroImovel()
     {
