@@ -12,7 +12,7 @@ public class Main
     {
         while (true)
         {
-            int escolha = InOut.leInt(textoMenu(), "MENU DE OPÇÕES");
+            int escolha = InOut.leInt(MENU, "MENU DE OPÇÕES");
             if (escolha == 0)
                 break;
 
@@ -20,15 +20,11 @@ public class Main
         }
     }
 
-    private static String textoMenu()
-    {
-
-        return "1 - Cadastrar imóvel" + System.lineSeparator() +
-                "2 - Remover imóvel" + System.lineSeparator() +
-                "3 - Simular imposto total devido" + System.lineSeparator() +
-                "4 - Processar multa sob todos imóveis" + System.lineSeparator() +
-                "5 - Processar imóvel específico" + System.lineSeparator() +
-                System.lineSeparator() +
-                "0 - Sair do programa";
-    }
+    private static final String MENU = "1 - Cadastrar imóvel" + System.lineSeparator() +
+            "2 - Remover imóvel" + System.lineSeparator() +
+            "3 - Simular imposto total devido" + System.lineSeparator() +
+            "4 - Processar multa sob todos imóveis" + System.lineSeparator() +
+            "5 - Processar imóvel específico" + System.lineSeparator() +
+            System.lineSeparator() +
+            "0 - Sair do programa";
 }
