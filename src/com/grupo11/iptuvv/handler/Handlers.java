@@ -1,7 +1,5 @@
 package com.grupo11.iptuvv.handler;
 
-import com.grupo11.iptuvv.entity.Imovel;
-import com.grupo11.iptuvv.forms.FormsMunicipio;
 import com.grupo11.iptuvv.menu.Menu;
 
 public class Handlers
@@ -35,7 +33,8 @@ public class Handlers
                 Menu.processarImovelEspecifico();
                 break;
             }
-            default: {
+            default:
+            {
                 Menu.escolhaNaoExiste();
             }
         }

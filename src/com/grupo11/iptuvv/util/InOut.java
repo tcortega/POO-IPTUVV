@@ -30,8 +30,8 @@ public class InOut
         Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                 JOptionPane.QUESTION_MESSAGE);
 
-		if (Entrada == null)
-			System.exit(0);
+        if (Entrada == null)
+            System.exit(0);
 
         return Entrada;
     }
@@ -61,8 +61,8 @@ public class InOut
                 Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                         JOptionPane.QUESTION_MESSAGE);
 
-				if (Entrada == null)
-					System.exit(0);
+                if (Entrada == null)
+                    System.exit(0);
 
                 num = Byte.parseByte(Entrada);
                 ERRO = false;
@@ -100,8 +100,8 @@ public class InOut
                 Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                         JOptionPane.QUESTION_MESSAGE);
 
-				if (Entrada == null)
-					System.exit(0);
+                if (Entrada == null)
+                    System.exit(0);
 
                 num = Short.parseShort(Entrada);
                 ERRO = false;
@@ -139,8 +139,8 @@ public class InOut
                 Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                         JOptionPane.QUESTION_MESSAGE);
 
-				if (Entrada == null)
-					System.exit(0);
+                if (Entrada == null)
+                    System.exit(0);
 
                 num = Integer.parseInt(Entrada);
                 ERRO = false;
@@ -178,8 +178,8 @@ public class InOut
                 Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                         JOptionPane.QUESTION_MESSAGE);
 
-				if (Entrada == null)
-					System.exit(0);
+                if (Entrada == null)
+                    System.exit(0);
 
                 num = Long.parseLong(Entrada);
                 ERRO = false;
@@ -217,8 +217,8 @@ public class InOut
                 Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                         JOptionPane.QUESTION_MESSAGE);
 
-				if (Entrada == null)
-					System.exit(0);
+                if (Entrada == null)
+                    System.exit(0);
 
                 num = Float.parseFloat(Entrada);
                 ERRO = false;
@@ -256,8 +256,8 @@ public class InOut
                 Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                         JOptionPane.QUESTION_MESSAGE);
 
-				if (Entrada == null)
-					System.exit(0);
+                if (Entrada == null)
+                    System.exit(0);
 
                 num = Double.parseDouble(Entrada);
                 ERRO = false;
@@ -291,15 +291,16 @@ public class InOut
             Entrada = JOptionPane.showInputDialog(null, frase, nomeJanela,
                     JOptionPane.QUESTION_MESSAGE);
 
-			if (Entrada == null)
-				System.exit(0);
+            if (Entrada == null)
+                System.exit(0);
 
             ERRO = Entrada.length() == 0;
         } while (ERRO);
         return Entrada.charAt(0);
     }
 
-    public static boolean leBoolean(String frase, String nomeJanela) {
+    public static boolean leBoolean(String frase, String nomeJanela)
+    {
         int escolha = JOptionPane.showConfirmDialog(null, frase, nomeJanela, JOptionPane.YES_NO_OPTION);
 
         if (escolha == -1)

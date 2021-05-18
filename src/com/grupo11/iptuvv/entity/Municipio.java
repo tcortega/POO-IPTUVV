@@ -13,6 +13,29 @@ public class Municipio
         this.imoveis = new HashMap<>();
     }
 
+    private static float calcularMulta(Imovel imovel)
+    {
+        int mesesAtraso = imovel.getMesesAtraso();
+        float valorImposto = imovel.getImposto();
+
+        if (mesesAtraso <= 0)
+            return valorImposto;
+
+        if (mesesAtraso <= 5)
+            return valorImposto * 1.01f;
+
+        if (mesesAtraso <= 8)
+            return valorImposto * 1.023f;
+
+        if (mesesAtraso <= 10)
+            return valorImposto * 1.03f;
+
+        if (mesesAtraso <= 12)
+            return valorImposto * 1.054f;
+
+        return valorImposto * 1.1f;
+    }
+
     public void addImovel(Imovel imovel)
     {
         String matricula = this.gerarMatricula(imovel);
@@ -30,7 +53,8 @@ public class Municipio
         imoveis.remove(matricula);
     }
 
-    public int getQuantidadeImoveis() {
+    public int getQuantidadeImoveis()
+    {
         return this.imoveis.size();
     }
 
@@ -40,7 +64,8 @@ public class Municipio
         return primeiroNome + "vv" + this.imoveis.size();
     }
 
-    public Imovel processarImovel(Imovel imovel) {
+    public Imovel processarImovel(Imovel imovel)
+    {
         float valorProcessado = calcularMulta(imovel);
         imovel.setImposto(valorProcessado);
         imovel.setStatusProcessado(true);
@@ -66,7 +91,8 @@ public class Municipio
         return valorTotal;
     }
 
-    public float simularValorTotalDevido() {
+    public float simularValorTotalDevido()
+    {
         float valorTotal = 0.0f;
         for (Map.Entry<String, Imovel> entry : imoveis.entrySet())
         {
@@ -78,28 +104,5 @@ public class Municipio
         }
 
         return valorTotal;
-    }
-
-    private static float calcularMulta(Imovel imovel)
-    {
-        int mesesAtraso = imovel.getMesesAtraso();
-        float valorImposto = imovel.getImposto();
-
-        if (mesesAtraso <= 0)
-            return valorImposto;
-
-        if (mesesAtraso <= 5)
-            return valorImposto * 1.01f;
-
-        if (mesesAtraso <= 8)
-            return valorImposto * 1.023f;
-
-        if (mesesAtraso <= 10)
-            return valorImposto * 1.03f;
-
-        if (mesesAtraso <= 12)
-            return valorImposto * 1.054f;
-
-        return valorImposto * 1.1f;
     }
 }

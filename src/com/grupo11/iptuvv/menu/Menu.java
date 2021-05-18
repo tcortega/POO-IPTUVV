@@ -6,7 +6,6 @@ import com.grupo11.iptuvv.forms.FormsImovel;
 import com.grupo11.iptuvv.forms.FormsMenu;
 import com.grupo11.iptuvv.forms.FormsMunicipio;
 import com.grupo11.iptuvv.handler.Handlers;
-import com.grupo11.iptuvv.util.InOut;
 
 public class Menu
 {
@@ -84,15 +83,8 @@ public class Menu
         if (imovelEscolha == null)
         {
             FormsMunicipio.imovelNaoEncontrado(matricula);
-        } else
+        } else if (!imovelEscolha.getStatusProcessado() || FormsMunicipio.confirmacaoReprocessarImovel(imovelEscolha))
         {
-            if (imovelEscolha.getStatusProcessado())
-            {
-                boolean escolhaProcessamento = FormsMunicipio.confirmacaoReprocessarImovel(imovelEscolha);
-                if (!escolhaProcessamento)
-                    return;
-            }
-
             imovelEscolha = municipio.processarImovel(imovelEscolha);
             FormsMunicipio.sucessoProcessamentoImovel(imovelEscolha);
         }

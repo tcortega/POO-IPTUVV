@@ -7,10 +7,13 @@ public class FormsMenu
 
     public static final String TITULO_MENU = "MENU DE OPÇÕES";
 
-    public static int menuPrincipal() {
+    public static int menuPrincipal()
+    {
         return InOut.leInt(MENU, TITULO_MENU);
     }
-    public static void escolhaNaoExiste() {
+
+    public static void escolhaNaoExiste()
+    {
         InOut.MsgDeErro(TITULO_MENU, "A opção escolhida não existe");
     }
 
