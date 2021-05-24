@@ -1,4 +1,4 @@
-package com.grupo11.iptuvv.handler;
+package com.grupo11.iptuvv.helpers;
 
 import com.grupo11.iptuvv.menu.Menu;
 

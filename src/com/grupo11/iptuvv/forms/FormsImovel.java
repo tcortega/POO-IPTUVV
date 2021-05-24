@@ -1,6 +1,6 @@
 package com.grupo11.iptuvv.forms;
 
-import com.grupo11.iptuvv.entity.Imovel;
+import com.grupo11.iptuvv.models.Imovel;
 import com.grupo11.iptuvv.util.InOut;
 
 public class FormsImovel

@@ -1,4 +1,4 @@
-package com.grupo11.iptuvv.entity;
+package com.grupo11.iptuvv.models;
 
 public class Imovel
 {

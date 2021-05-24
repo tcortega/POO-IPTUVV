@@ -1,16 +1,19 @@
 package com.grupo11.iptuvv.menu;
 
-import com.grupo11.iptuvv.entity.Imovel;
-import com.grupo11.iptuvv.entity.Municipio;
+import com.grupo11.iptuvv.models.Imovel;
+import com.grupo11.iptuvv.models.Municipio;
 import com.grupo11.iptuvv.forms.FormsImovel;
 import com.grupo11.iptuvv.forms.FormsMenu;
 import com.grupo11.iptuvv.forms.FormsMunicipio;
-import com.grupo11.iptuvv.handler.Handlers;
+import com.grupo11.iptuvv.helpers.Handlers;
 
 public class Menu
 {
     public static final Municipio municipio = new Municipio();
 
+    /**
+     * Método usado para chamada do menu principal
+     */
     public static void exibir()
     {
         while (true)
